@@ -1,0 +1,87 @@
+{
+	"name": "digital-marketing-framework/typo3-cache",
+	"type": "typo3-cms-extension",
+	"description": "Digital Marketing Framework - Cache",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"form",
+		"formrelay"
+	],
+	"homepage": "https://www.mediatis.de",
+	"authors": [
+		{
+			"name": "Michael Vöhringer",
+			"role": "Developer"
+		},
+		{
+			"name": "Meelis Karulin",
+			"role": "Developer"
+		},
+		{
+			"name": "Damian Ickler",
+			"role": "Developer"
+		},
+		{
+			"name": "Stephan Ude",
+			"role": "Developer"
+		}
+	],
+    "minimum-stability": "dev",
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "git@github.com:digital-marketing-framework/core.git",
+			"only": [
+				"digital-marketing-framework/core"
+			]
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:digital-marketing-framework/typo3-core.git",
+			"only": [
+				"digital-marketing-framework/typo3-core"
+			]
+		}
+	],
+	"require": {
+		"php": "^8.1",
+		"typo3/cms-core": "^11.5",
+		"digital-marketing-framework/typo3-core": "dev-main"
+	},
+	"require-dev": {
+		"nimut/testing-framework": "^6.0",
+		"typo3/coding-standards": "^0.5.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"DigitalMarketingFramework\\Typo3\\Cache\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"DigitalMarketingFramework\\Typo3\\Cache\\Tests\\": "Tests"
+		}
+	},
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin",
+		"allow-plugins": {
+			"typo3/cms-composer-installers": true,
+			"typo3/class-alias-loader": true
+		}
+	},
+	"scripts": {
+		"link-extension": [
+			"mkdir -p .Build/Web/typo3conf/ext/",
+			"[ -L .Build/Web/typo3conf/ext/digitalmarketingframework_cache ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/digitalmarketingframework_cache"
+		]
+	},
+	"extra": {
+		"typo3/cms": {
+			"web-dir": ".Build/Web",
+			"extension-key": "digitalmarketingframework_cache"
+		}
+	}
+}

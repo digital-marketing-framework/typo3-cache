@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  DigitalMarketingFramework\Typo3\Cache\:
+    resource: '../Classes/*'
+
+  DigitalMarketingFramework\Typo3\Cache\Registry\EventListener\CoreRegistryServiceUpdateEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'digital-marketing-framework/cache/registry-update/core/service'
+        event: DigitalMarketingFramework\Typo3\Core\Registry\Event\CoreRegistryServiceUpdateEvent
