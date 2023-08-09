@@ -7,8 +7,8 @@ services:
   DigitalMarketingFramework\Typo3\Cache\:
     resource: '../Classes/*'
 
-  DigitalMarketingFramework\Typo3\Cache\Registry\EventListener\CoreRegistryServiceUpdateEventListener:
+  DigitalMarketingFramework\Typo3\Cache\Registry\EventListener\CoreRegistryUpdateEventListener:
     tags:
       - name: event.listener
-        identifier: 'digital-marketing-framework/cache/registry-update/core/service'
-        event: DigitalMarketingFramework\Typo3\Core\Registry\Event\CoreRegistryServiceUpdateEvent
+        identifier: 'digital-marketing-framework/cache/registry-update/core'
+        event: DigitalMarketingFramework\Typo3\Core\Registry\Event\CoreRegistryUpdateEvent
