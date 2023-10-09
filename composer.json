@@ -5,9 +5,14 @@
   "license": "GPL-2.0-or-later",
   "keywords": [
     "TYPO3",
-    "extension",
-    "form",
-    "formrelay"
+    "marketing",
+    "framework",
+    "data",
+    "relay",
+    "distribution",
+    "distributor",
+    "collector",
+    "cache"
   ],
   "homepage": "https://www.mediatis.de",
   "authors": [
