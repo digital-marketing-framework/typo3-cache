@@ -54,13 +54,13 @@
   "scripts": {
     "link-extension": [
       "mkdir -p .Build/Web/typo3conf/ext/",
-      "[ -L .Build/Web/typo3conf/ext/digitalmarketingframework_cache ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/digitalmarketingframework_cache"
+      "[ -L .Build/Web/typo3conf/ext/dmf_cache ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/dmf_cache"
     ]
   },
   "extra": {
     "typo3/cms": {
       "web-dir": ".Build/Web",
-      "extension-key": "digitalmarketingframework_cache"
+      "extension-key": "dmf_cache"
     }
   }
 }
