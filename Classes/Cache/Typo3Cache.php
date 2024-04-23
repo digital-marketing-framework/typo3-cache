@@ -83,14 +83,10 @@ class Typo3Cache implements CacheInterface
      * @param array<mixed> $data
      * @param array<string> $tags
      */
-    public function store(string $key, array $data, array $tags = []): void
+    public function store(string $key, array $data, int $timeoutInSeconds = -1, array $tags = []): void
     {
-        $this->cache->set(
-            $key,
-            $data,
-            $tags,
-            $this->getTimeoutInSeconds()
-        );
+        $lifetime = $timeoutInSeconds > 0 ? $timeoutInSeconds : $this->getTimeoutInSeconds();
+        $this->cache->set($key, $data, $tags, $lifetime);
     }
 
     /**
