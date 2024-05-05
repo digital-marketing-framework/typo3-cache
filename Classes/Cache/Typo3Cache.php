@@ -8,10 +8,18 @@ use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
 
 class Typo3Cache implements CacheInterface
 {
+    /**
+     * @var string
+     */
     public const CACHE_IDENTIFIER = 'digitalmarketingframework_cache';
+
+    /**
+     * @var int
+     */
     public const DEFAULT_LIFETIME = 1800;
 
     protected FrontendInterface $cache;
+
     protected int $timeout = self::DEFAULT_LIFETIME;
 
     public function __construct(CacheManager $cacheManager)
@@ -35,11 +43,13 @@ class Typo3Cache implements CacheInterface
     public function fetch(string $key): ?array
     {
         $result = $this->cache->get($key);
+
         return $result === false ? null : $result;
     }
 
     /**
      * @param array<string> $keys
+     *
      * @return array<array<mixed>>
      */
     public function fetchMultiple(array $keys): array
@@ -51,6 +61,7 @@ class Typo3Cache implements CacheInterface
                 $results[] = $result;
             }
         }
+
         return $results;
     }
 
